@@ -17,20 +17,20 @@
 ## Introduction
 Welcome to the Kumori Story Generator! This groundbreaking application leverages state-of-the-art generative AI technologies to automate the creation of rich multimedia stories, making storytelling more accessible and engaging for everyone.
 
-Harnessing the power of advanced natural language processing (NLP) models like **Ollama** (powered by `llama3`) and cutting-edge image generation models such as **Stable Diffusion**, the Kumori Story Generator crafts engaging narratives and vivid visual content based on user-provided inputs. The application also integrates facial recognition and voice synthesis technologies to enhance character consistency and narrative immersion. Once the content is generated, it is dynamically compiled into videos with embedded voiceovers and visual effects, all ready for publication. With a highly automated workflow, users need to manage only the global variables to create neat and fun storylines entirely from scratch.
+Harnessing the power of advanced natural language processing (NLP) models like **Ollama** (powered by `llama3`) and cutting-edge image generation models such as **Stable Diffusion**, the Kumori Story Generator crafts engaging narratives and vivid visual content based on user inputs. The application integrates facial recognition and voice synthesis technologies to enhance character consistency and narrative immersion. Once the content is generated, it is dynamically compiled into videos with embedded voiceovers and visual effects, all ready for publication. With a highly automated workflow, users need to manage only the global variables to create neat and fun storylines entirely from scratch.
 
 ## Features
-- **Comprehensive Storyline Generation**: Automatically create detailed and engaging storylines using advanced NLP models from **Ollama**.
-- **High-Quality Image Generation**: Generate stunning and context-specific visuals for story chapters using **Stable Diffusion** and other generative AI models.
-- **Character Consistency**: Ensure visual consistency of characters across images with facial recognition and embedding techniques from **MTCNN**, **Dlib**, and **FaceAnalysis**.
-- **Automated Voiceovers**: Convert text-based story content into natural-sounding voiceovers using **Google Text-to-Speech (gTTS)**.
-- **Dynamic Video Creation**: Compile story chapters into cohesive videos with dynamic zoom and pan effects using **FFMPEG**.
-- **Subtitle Integration**: Enhance videos with embedded subtitles to improve accessibility and engagement.
-- **YouTube Integration**: Schedule and upload polished videos directly to YouTube using the **YouTube Data API**, managing quotas and ensuring proper publishing schedules.
-- **User-Friendly Customization**: Easily modify story parameters, AI model settings, and other configurations via global variables to generate unique and personalized content.
+- **Comprehensive Storyline Generation**: Automatically create detailed storylines using advanced NLP models from **Ollama**.
+- **High-Quality Image Generation**: Generate stunning visuals for story chapters using **Stable Diffusion**.
+- **Character Consistency**: Maintain visual consistency of characters with facial recognition techniques from **MTCNN**, **Dlib**, and **FaceAnalysis**.
+- **Automated Voiceovers**: Convert text into natural-sounding voiceovers using **Google Text-to-Speech (gTTS)**.
+- **Dynamic Video Creation**: Compile story chapters into cohesive videos with dynamic effects using **FFMPEG**.
+- **Subtitle Integration**: Embed subtitles to enhance video accessibility.
+- **YouTube Integration**: Schedule and upload videos to YouTube using the **YouTube Data API**.
+- **User-Friendly Customization**: Easily modify story parameters and configurations via global variables.
 
 ## Quick Start Guide
-If you're eager to jump in and get started, follow this quick guide to see the Kumori Story Generator in action.
+Follow this guide to get started with the Kumori Story Generator.
 
 ### Prerequisites
 - Python 3.x
@@ -40,8 +40,8 @@ If you're eager to jump in and get started, follow this quick guide to see the K
 ### Installation
 1. Clone the repository:
     ```bash
-    git clone https://github.com/tillo13/kumori-story-generator.git
-    cd kumori-story-generator
+    git clone https://github.com/tillo13/ai_storyboard_video_generator.git
+    cd ai_storyboard_video_generator
     ```
 2. Create and activate a virtual environment:
     ```bash
@@ -74,28 +74,28 @@ The project leverages a variety of Python libraries and models:
 - MTCNN/Dlib/FaceAnalysis for facial recognition: `mtcnn`, `dlib`, `insightface`
 
 ### Configuration
-Edit the `GLOBAL_VARIABLES.py` file to adjust various parameters:
+Edit the `GLOBAL_VARIABLES.py` file to adjust parameters:
 - Set paths for user-provided images, story themes, default video length, etc.
 - Configure AI models and adjust settings for image generation, voice creation, video synthesis, and more.
 
 ### Running the Application
 1. **Create a Story**
-    ```
+    ```bash
     python 1_dream_up_a_story.py
     ```
     
 2. **Build Out the Chapters**
-    ```
+    ```bash
     python 2_build_out_chapters.py
     ```
     
 3. **Summarize Chapters and Add AI Prompts**
-    ```
+    ```bash
     python 3_summarize_chapters_add_ai_prompts.py
     ```
     
 4. **Generate Images from AI Prompts**
-    ```
+    ```bash
     python 4_create_images_from_ai_prompts.py
     ```
     
@@ -105,46 +105,47 @@ Edit the `GLOBAL_VARIABLES.py` file to adjust various parameters:
     ```
 
 6. **Create the Movie**
-    ```
+    ```bash
     python 5_create_movie.py
     ```
     
 7. **Create a Mosaic**
-    ```
+    ```bash
     python 6_create_mosaic.py
     ```
     
 8. **Add Zoom Pan Effects**
-    ```
+    ```bash
     python 7_zoompan_movie.py
     ```
     
 9. **Add Subtitles**
-    ```
+    ```bash
     python 8_add_ffmpeg_subtitles.py
     ```
     
 10. **Create Voiceover**
-    ```
+    ```bash
     python 9_create_voiceover.py
     ```
     
 11. **Upload to YouTube** (Review and adjust CSV log before running)
-    ```
+    ```bash
     python 0_preview_mosaics_then_upload_to_youtube.py
     ```
 
 ## File Structure Overview
 Here is an overview of the project's directory structure:
-. 
+```
+.
 │
 ├── ollama/
 │   ├── ollama_runners/
-│        ├── cpu/
-│        ├── cpu_avx/
-│        ├── cpu_avx2/
-│        ├── cuda_v11.3/
-│        ├── rocm_v6.1/
+│   │   ├── cpu/
+│   │   ├── cpu_avx/
+│   │   ├── cpu_avx2/
+│   │   ├── cuda_v11.3/
+│   │   ├── rocm_v6.1/
 │
 ├── user_images/         # Store user-provided images 
 │
@@ -188,7 +189,7 @@ Here is an overview of the project's directory structure:
 ├── 7_zoompan_movie.py        # Add zoom and pan effects
 ├── 8_add_ffmpeg_subtitles.py # Add subtitles to the video
 ├── 9_create_voiceover.py     # Voice over generation
-
+```
 
 ## AI Models and Tools
 The Kumori Story Generator harnesses several advanced AI models and tools:
@@ -232,5 +233,13 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 - Ollama and Stable Diffusion for providing powerful AI models.
 - Google Cloud Platform for API access and resources.
 - Contributors and community for continuous support and improvements.
+
+## Examples
+Check out some of the results created using this generator:
+- [Video 1](https://www.youtube.com/shorts/mfCbNrOxq0w)
+- [Video 2](https://www.youtube.com/shorts/eJ8T6cfxADg)
+- [Video 3](https://www.youtube.com/shorts/DefdXzCGNOY)
+
+Explore the full collection: [Kumori AI on YouTube](https://www.youtube.com/@kumoriai/shorts)
 
 Feel free to try out the generator and create your own stories! For any questions or additional features, please reach out or open an issue on GitHub. Happy storytelling!
