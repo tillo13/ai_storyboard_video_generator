@@ -58,11 +58,6 @@ Follow this guide to get started with the Kumori Story Generator.
     - Create OAuth 2.0 client ID credentials and download the `client_secrets.json` file.
     - Place the `client_secrets.json` file in the project directory.
 
-5. Run the initial setup script:
-    ```bash
-    python gather_pythons.py
-    ```
-
 ## Detailed Setup and Installation
 
 ### Dependencies
